@@ -5,8 +5,8 @@ android.useSupportVectors
 
 name := "kcptun"
 organization := "com.github.shadowsocks"
-version := "0.0.1"
-versionCode := Some(1)
+version := "0.0.2"
+versionCode := Some(2)
 
 platformTarget := "android-25"
 
