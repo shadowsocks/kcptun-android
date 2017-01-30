@@ -2,6 +2,8 @@
 
 [kcptun](https://github.com/shadowsocks/kcptun) plugin for [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android). 
 
+<a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks.kcptun"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="48"></a>
+
 ### CI STATUS
 
 [![Build Status](https://api.travis-ci.org/shadowsocks/kcptun-android.svg)](https://travis-ci.org/shadowsocks/kcptun-android)
