@@ -9,7 +9,7 @@
                  android:icon="@mipmap/ic_kcptun_logo">
         <provider android:name=".BinaryProvider"
                   android:exported="true"
-                  android:authorities="com.github.shadowsocks.plugin.kcptun">
+                  android:authorities="com.github.shadowsocks.plugin.kcptun.BinaryProvider">
             <intent-filter>
                 <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
             </intent-filter>
