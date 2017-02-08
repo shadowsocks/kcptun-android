@@ -21,7 +21,7 @@ shrinkResources := true
 typedResources := false
 resConfigs := Seq("zh-rCN")
 
-libraryDependencies += "com.github.shadowsocks" %% "plugin" % "0.0.1"
+libraryDependencies += "com.github.shadowsocks" %% "plugin" % "0.0.2"
 
 lazy val goBuild = TaskKey[Unit]("go-build", "Build go and kcptun")
 goBuild := {
