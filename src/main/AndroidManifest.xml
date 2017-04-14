@@ -6,7 +6,7 @@
               android:targetSdkVersion="25"/>
     <application android:allowBackup="false"
                  android:label="kcptun"
-                 android:icon="@mipmap/ic_kcptun_logo">
+                 android:icon="@mipmap/ic_launcher">
         <provider android:name=".BinaryProvider"
                   android:exported="true"
                   android:authorities="com.github.shadowsocks.plugin.kcptun.BinaryProvider">
