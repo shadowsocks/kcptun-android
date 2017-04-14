@@ -14,14 +14,14 @@ compileOrder := CompileOrder.JavaThenScala
 javacOptions ++= "-source" :: "1.7" :: "-target" :: "1.7" :: Nil
 scalacOptions ++= "-target:jvm-1.7" :: "-Xexperimental" :: Nil
 
-proguardVersion := "5.3.2"
+proguardVersion := "5.3.3"
 proguardCache := Seq()
 
 shrinkResources := true
 typedResources := false
-resConfigs := Seq("zh-rCN")
+resConfigs := Seq("ja", "ko", "ru", "zh-rCN", "zh-rTW")
 
-libraryDependencies += "com.github.shadowsocks" %% "plugin" % "0.0.2"
+libraryDependencies += "com.github.shadowsocks" %% "plugin" % "0.0.3"
 
 lazy val goBuild = TaskKey[Unit]("go-build", "Build go and kcptun")
 goBuild := {
