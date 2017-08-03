@@ -28,6 +28,8 @@ class HelpCallback extends com.github.shadowsocks.plugin.HelpCallback {
         !line.startsWith("   --version,"))
       .mkString("\n")
       .replaceAll(" {2,}", "\n")
+      .replaceAll("--", "")
+      .replaceAll(" value", "=value;")
       .substring(1) // remove 1st \n
   }
 }
