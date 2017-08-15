@@ -3,12 +3,14 @@ scalaVersion := "2.11.8"
 enablePlugins(AndroidApp)
 android.useSupportVectors
 
+resolvers += Resolver.jcenterRepo
+
 name := "kcptun"
 organization := "com.github.shadowsocks"
-version := "0.0.5"
-versionCode := Some(5)
+version := "0.0.6"
+versionCode := Some(6)
 
-platformTarget := "android-25"
+platformTarget := "android-26"
 
 compileOrder := CompileOrder.JavaThenScala
 javacOptions ++= "-source" :: "1.7" :: "-target" :: "1.7" :: Nil
@@ -21,7 +23,7 @@ shrinkResources := true
 typedResources := false
 resConfigs := Seq("ja", "ko", "ru", "zh-rCN", "zh-rTW")
 
-libraryDependencies += "com.github.shadowsocks" %% "plugin" % "0.0.3"
+libraryDependencies += "com.github.shadowsocks" %% "plugin" % "0.0.4"
 
 lazy val goBuild = TaskKey[Unit]("go-build", "Build go and kcptun")
 goBuild := {
