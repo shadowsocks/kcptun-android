@@ -1,0 +1,6 @@
+/build
+# no tests written yet
+/src/androidTest
+/src/test
+/src/bin
+/.deps
