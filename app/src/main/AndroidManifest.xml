@@ -8,6 +8,7 @@
                  android:icon="@mipmap/ic_launcher">
         <provider android:name=".BinaryProvider"
                   android:exported="true"
+                  android:directBootAware="true"
                   android:authorities="com.github.shadowsocks.plugin.kcptun.BinaryProvider"
                   tools:ignore="ExportedContentProvider">
             <intent-filter>
