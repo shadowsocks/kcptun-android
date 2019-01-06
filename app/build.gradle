@@ -18,20 +18,27 @@ def getCurrentFlavor() {
 }
 
 android {
-    buildToolsVersion "28.0.0"
+    buildToolsVersion "28.0.3"
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.github.shadowsocks.plugin.kcptun"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion 28
-        versionCode 10000
-        versionName "0.1.0"
+        versionCode 1000000
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    splits {
+        abi {
+            enable true
+            universalApk true
         }
     }
     sourceSets.main.jniLibs.srcDirs += new File(projectDir, "src/bin")
@@ -65,13 +72,13 @@ tasks.whenTaskAdded { task ->
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    implementation 'com.github.shadowsocks:plugin:0.1.1'
+    implementation 'com.github.shadowsocks:plugin:1.0.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
 
-ext.abiCodes = ['armeabi-v7a': 1, 'arm64-v8a': 2, x86: 3]
+ext.abiCodes = ['armeabi-v7a': 1, 'arm64-v8a': 2, x86: 3, x86_64: 4]
 if (getCurrentFlavor() == 'release') android.applicationVariants.all { variant ->
     variant.outputs.each { output ->
         def offset = project.ext.abiCodes.get(output.getFilter(OutputFile.ABI))
