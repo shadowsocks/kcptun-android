@@ -37,14 +37,14 @@ if [ ! -f "$TARGET/armeabi-v7a/libkcptun.so" ] || [ ! -f "$TARGET/arm64-v8a/libk
         try mv client $TARGET/arm64-v8a/libkcptun.so
     fi
 
-    echo "Cross compile kcptun for x86"
+    echo "Cross compile kcptun for 386"
     if [ ! -f "$TARGET/x86/libkcptun.so" ]; then
         try env CGO_ENABLED=1 CC=$TOOLCHAIN/i686-linux-android${MIN_API}-clang GOOS=android GOARCH=386 go build -ldflags="-s -w"
         try $TOOLCHAIN/i686-linux-android-strip client
         try mv client $TARGET/x86/libkcptun.so
     fi
 
-    echo "Cross compile kcptun for x86_64"
+    echo "Cross compile kcptun for amd64"
     if [ ! -f "$TARGET/x86_64/libkcptun.so" ]; then
         try env CGO_ENABLED=1 CC=$TOOLCHAIN/x86_64-linux-android${MIN_API}-clang GOOS=android GOARCH=amd64 go build -ldflags="-s -w"
         try $TOOLCHAIN/x86_64-linux-android-strip client
