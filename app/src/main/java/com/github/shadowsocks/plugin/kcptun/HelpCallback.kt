@@ -14,6 +14,8 @@ class HelpCallback : com.github.shadowsocks.plugin.HelpCallback() {
                         .filter {
                             !it.startsWith("   --localaddr ") &&
                                     !it.startsWith("   --remoteaddr ") &&
+                                    !it.startsWith("   --log ") &&
+                                    !it.startsWith("   --quiet ") &&
                                     !it.startsWith("   -c ") &&
                                     !it.startsWith("   -V ") &&
                                     !it.startsWith("   --fast-open ") &&
