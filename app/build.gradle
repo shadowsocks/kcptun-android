@@ -24,8 +24,8 @@ android {
         applicationId "com.github.shadowsocks.plugin.kcptun"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion 28
-        versionCode 1000000
-        versionName "1.0.0"
+        versionCode 1000100
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
