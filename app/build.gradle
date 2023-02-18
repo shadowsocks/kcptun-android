@@ -1,5 +1,5 @@
-import org.apache.tools.ant.taskdefs.condition.Os
 import com.android.build.OutputFile
+import org.apache.tools.ant.taskdefs.condition.Os
 
 import java.util.regex.Matcher
 import java.util.regex.Pattern
@@ -18,14 +18,14 @@ def getCurrentFlavor() {
 }
 
 android {
-    buildToolsVersion "28.0.3"
-    compileSdkVersion 28
+    buildToolsVersion "33.0.0"
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.github.shadowsocks.plugin.kcptun"
         minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion 28
-        versionCode 1000100
-        versionName "1.0.1"
+        targetSdkVersion 33
+        versionCode 1000200
+        versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -71,11 +71,11 @@ tasks.whenTaskAdded { task ->
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    implementation 'com.github.shadowsocks:plugin:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation 'com.github.shadowsocks:plugin:2.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
 ext.abiCodes = ['armeabi-v7a': 1, 'arm64-v8a': 2, x86: 3, x86_64: 4]

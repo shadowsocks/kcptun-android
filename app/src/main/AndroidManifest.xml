@@ -1,38 +1,50 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.github.shadowsocks.plugin.kcptun">
-    <uses-feature android:name="android.hardware.touchscreen"
-                  android:required="false"/>
-    <application android:allowBackup="false"
-                 android:label="kcptun"
-                 android:icon="@mipmap/ic_launcher">
-        <provider android:name=".BinaryProvider"
-                  android:exported="true"
-                  android:directBootAware="true"
-                  android:authorities="com.github.shadowsocks.plugin.kcptun.BinaryProvider"
-                  tools:ignore="ExportedContentProvider">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.github.shadowsocks.plugin.kcptun">
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <application
+        android:allowBackup="false"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="kcptun">
+        <provider
+            android:name="com.github.shadowsocks.plugin.kcptun.BinaryProvider"
+            android:authorities="com.github.shadowsocks.plugin.kcptun.BinaryProvider"
+            android:directBootAware="true"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider">
             <intent-filter>
-                <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
-                <data android:scheme="plugin"
-                      android:host="com.github.shadowsocks"
-                      android:pathPrefix="/kcptun"/>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN" />
+                <data
+                    android:host="com.github.shadowsocks"
+                    android:pathPrefix="/kcptun"
+                    android:scheme="plugin" />
             </intent-filter>
-            <meta-data android:name="com.github.shadowsocks.plugin.id"
-                       android:value="kcptun"/>
-            <meta-data android:name="com.github.shadowsocks.plugin.default_config"
-                       android:value="crypt=none;mode=normal;mtu=1200;nocomp;dscp=46;parityshard=0"/>
+
+            <meta-data
+                android:name="com.github.shadowsocks.plugin.id"
+                android:value="kcptun" />
+            <meta-data
+                android:name="com.github.shadowsocks.plugin.default_config"
+                android:value="crypt=none;mode=normal;mtu=1200;nocomp;dscp=46;parityshard=0" />
         </provider>
-        <activity android:name=".HelpCallback"
-                  android:theme="@style/Theme.AppCompat.Translucent">
+        <activity
+            android:name="com.github.shadowsocks.plugin.kcptun.HelpCallback"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Translucent">
             <intent-filter>
-                <action android:name="com.github.shadowsocks.plugin.ACTION_HELP"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="plugin"
-                      android:host="com.github.shadowsocks"
-                      android:path="/kcptun"/>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_HELP" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="com.github.shadowsocks"
+                    android:path="/kcptun"
+                    android:scheme="plugin" />
             </intent-filter>
         </activity>
     </application>
